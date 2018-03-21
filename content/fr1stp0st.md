@@ -1,8 +1,8 @@
 Title: Fr1st P0st
 Date: 2018-03-20 15:18
-Modified: 2018-03-20 22:05
+Modified: 2018-03-21 08:55
 Category: Site
-Tags: site, backend
+Tags: site, backend, meta, scripting, python, bash, git, domain, documentation, howto
 Slug: fr1st-p0st
 Authors: Christopher Tichenor
 Summary: First post, how this site is made.
@@ -70,8 +70,7 @@ Okay done.
 
 Now to write up a post based on the example from the docs:
 
----
-
+```text
 Title: This is a test.
 Date: 2018-03-20 15:18
 Modified: 2018-03-20 15:20
@@ -82,8 +81,7 @@ Authors: Christopher Tichenor
 Summary: This is a test page, hopefully I can delete this.
 
 This is a test. This is only a test.
-
----
+```
 
 Make and test the site... wow that's ugly. Okay, at least let me change the post to this one I'm typing, I can update it later.
 
@@ -98,3 +96,9 @@ Next on the todo list is to get the domain stuff set up and switch up the theme 
 ```bash
 git submodule add https://github.com/catichenor/catichenor.github.io.git output
 ```
+
+---
+
+**ANOTHER UPDATE:** Wow, no offense to most Pelican theme makers, but most Pelican themes look awful. Chunk looks pretty decent, let's apply that... okay, I need to add the entry to the `pelicanconf.py` file in the page's source repo.
+
+Okay, Chunk definitely looks better but I need to modify the links... done. The "SITE" link is annoying but I'll figure out how to hide that later.

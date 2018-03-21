@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Fr1st P0st</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">EatYourAlgorithms </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/site.html">Site</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/fr1st-p0st.html" rel="bookmark"
+           title="Permalink to Fr1st P0st">Fr1st P0st</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-20T15:18:00-07:00">
+                Published: Tue 20 March 2018
+        </abbr>
+		<br />
+        <abbr class="modified" title="2018-03-20T21:45:00-07:00">
+                Updated: Tue 20 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/christopher-tichenor.html">Christopher Tichenor</a>
+        </address>
+<p>In <a href="/category/site.html">Site</a>.</p>
+<p>tags: <a href="/tag/site.html">site</a> <a href="/tag/backend.html">backend</a> </p>
+</footer><!-- /.post-info -->      <h1>EatYourAlgorithms.com</h1>
+<p>If you don’t do vegetables, do your drugs, and eat your algorithms, you can be big and strong like me!</p>
+<h1>Fr1st P0st</h1>
+<p>Yes, this dates me as an olde time Slashdot user. Buck feta!</p>
+<p>I’m writing this before I’ve even registered my domain because I want everything <em>about</em> this site chronicled <em>in</em> the site. I’ll get to my mission statement in the next post.</p>
+<p>Apologies for the stream-of-consciousness nature of the prose here.</p>
+<h2>Domain Registrar</h2>
+<p>First order of business is to pick a domain registrar... time to start Googling. Hm, a couple of hits, a fair amount of what looks like sponsored posts... GoDaddy is fairly low-ranked which is a good sign... <a href="https://makeawebsitehub.com/go/namecheap">NameCheap</a> and <a href="https://makeawebsitehub.com/go/bluehost">BlueHost</a> might work? Providers may be gaming the algorithm, DuckDuckGo to the rescue! </p>
+<p>Ech, a few articles from 2010 and 2012... </p>
+<p>Ooh, <a href="https://makeawebsitehub.com/reviews/domain-registrars/">this is a nice article</a>.</p>
+<p>Looks like NameCheap it is. I'll follow up if they screw me over.</p>
+<h2>Site Architecture</h2>
+<p>Next is how to actually implement the site. I don't really care for comments, my Wordpress site from 6-7 years ago had its comments system overrun by Russian hackers, which I blocked by disabling the comments section and removing them from the stylesheet, so I'd rather just not have them altogether. </p>
+<p>A static site generator looks to be the right tool here, and I could probably leverage GitHub for hosting. Jekyll is the obvious choice, except that it'd require that I learn Ruby for modifications and Ruby is... meh. Unless you're looking to hire me, in which case, I <em>love</em> Ruby!</p>
+<p>Off to <a href="https://github.com/vinta/awesome-python#static-site-generator">Awesome Python</a>... quite a few options here, looks like <a href="https://github.com/eudicots/Cactus">Cactus</a> runs on Django, also meh... <a href="https://github.com/hyde/hyde">Hyde</a> (I see what they did there) looks promising, but hasn't been updated in about two years. <a href="https://github.com/getnikola/nikola">Nikola</a> seems like a strong contender, last update was a few hours ago, might be a bit heavyweight, though... <a href="https://github.com/getpelican/pelican">Pelican</a> looks like a contender. <a href="https://github.com/vladris/tinkerer/">Tinkerer</a> doesn't really look compatible with my knowledge base.</p>
+<p>So... Nikola or Pelican. Both seem to have pretty <a href="https://fedoramagazine.org/make-github-pages-blog-with-pelican/">decent</a> <a href="http://journalpanic.com/pyhi/posts/make-your-own-blog-with-github-pages-and-nikola/">tutorials</a>. Nikola looks to have a direct CLI for GitHub pages, which is nice, but also still looks fairly complicated. I think I'll go with Pelican for now, looks like it should be fairly easy to switch out if something doesn't pan out.</p>
+<h2>Building the Site</h2>
+<p>Time to make a <a href="https://pages.github.com">GitHub Pages</a>, um, page? Go through the tutorial, la la la... okay done, go to the site... not working? Try again a minute later... now it works. "Hello World" indeed.</p>
+<p>Okay now to set up Pelican. Hm, instructions also want me to make a <code>[username].github.io-src</code> repo, okay, done... now it wants me to install the Python Pelican package? I'm not on Fedora so, no. I should probably pip install in a virtualenv... all the tutorials say to have a dedicated Pelican virtualenv? That doesn't sound right, but whatever. </p>
+<p>Alright, looks like I should probably use this sequence:</p>
+<div class="highlight"><pre><span></span>python3 -m venv Pelican
+<span class="nb">cd</span> Pelican
+<span class="nb">source</span> bin/activate
+</pre></div>
+
+
+<p>Okay, now we're in our virtualenv. Now to install Pelican and a few dependencies:</p>
+<div class="highlight"><pre><span></span>pip3 install pelican
+pip3 install Markdown typogrify
+</pre></div>
+
+
+<p>Okay, now we have our packages, time to set up the site. Doesn't seem right to do it here, maybe I can go back to the other directory?</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ../catichenor.github.io-src
+</pre></div>
+
+
+<p>The next step, which I assume to be <code>git submodule add git@github.com:catichenor/catichenor.github.io.git output</code> from the tutorial, doesn't work. Eh, maybe just skip straight to:</p>
+<div class="highlight"><pre><span></span>pelican-quickstart
+</pre></div>
+
+
+<p>Okay done.</p>
+<p>Now to write up a post based on the example from the docs:</p>
+<hr>
+<p>Title: This is a test.
+Date: 2018-03-20 15:18
+Modified: 2018-03-20 15:20
+Category: Site
+Tags: pelican, publishing
+Slug: this-is-a-test
+Authors: Christopher Tichenor
+Summary: This is a test page, hopefully I can delete this.</p>
+<p>This is a test. This is only a test.</p>
+<hr>
+<p>Make and test the site... wow that's ugly. Okay, at least let me change the post to this one I'm typing, I can update it later.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

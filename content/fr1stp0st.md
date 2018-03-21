@@ -90,3 +90,11 @@ Make and test the site... wow that's ugly. Okay, at least let me change the post
 Okay, that looks better, kinda. Now to publish to GitHub. Eh, looks like I didn't do the submodule thing correctly. Ugh. Okay, `cp -r output/* ../catichenor.github.io/` to the rescue here. I'll need to automate that plus probably some other stuff.
 
 Next on the todo list is to get the domain stuff set up and switch up the theme but at least we have a working site. Good night!
+
+---
+
+**UPDATE:** Okay, did a bit more tweaking here. It was bugging me that git submodules weren't being set up. After doing some digging, it looks like I need to run the following to get the submodule set up after the fact:
+
+```bash
+git submodule add https://github.com/catichenor/catichenor.github.io.git output
+```

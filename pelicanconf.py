@@ -32,4 +32,4 @@ DEFAULT_PAGINATION = 5
 
 # Chris T.: Theme
 
-THEME = '/Users/chris/Public/Pages/pelican-themes/chunk'
+THEME = '/Users/chris/Public/Pages/pelican-themes/chunk-cat'

@@ -1,11 +1,13 @@
 Title: Day Three
 Date: 2018-03-25 22:32
-Modified: 2018-03-26 16:44
+Modified: 2018-03-27 13:15
 Category: Algorithms
 Tags: python, programming, howto, algorithms, byte, bytearray
 Slug: day-three
 Authors: Christopher Tichenor
 Summary: Bytes and Bytearrays.
+
+## How to Read/Write a BMP file using Bytes and Bytearrays
 
 As a follow-up from yesterday, apparently using inheritance isn’t much better for [removing methods from a parent](https://medium.com/@george.shuklin/why-you-cant-remove-parent-methods-in-python-d4935e6d54a4). Ah well.
 

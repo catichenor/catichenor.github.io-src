@@ -1,11 +1,13 @@
 Title: Day Two
 Date: 2018-03-24 18:30
-Modified: 2018-03-24 18:30
+Modified: 2018-03-27 13:15
 Category: Algorithms
 Tags: python, programming, howto, algorithms, arrays, datastructures
 Slug: day-two
 Authors: Christopher Tichenor
 Summary: Creating arrays using, well, arrays.
+
+## Using `array.array` and limiting its capabilities
 
 Well, if you need to use an array to create an array, I guess that's what I need to do. I suppose this makes sense given that the original computers were giant, inefficient memory arrays, so arrays are built in to the system.
 

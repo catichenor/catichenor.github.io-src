@@ -1,17 +1,17 @@
 Title: Day One
 Date: 2018-03-22 18:41
-Modified: 2018-03-23 20:01
+Modified: 2018-03-27 13:16
 Category: Algorithms
 Tags: python, programming, howto, algorithms, arrays, datastructures
 Slug: day-one
 Authors: Christopher Tichenor
 Summary: My first day of algorithms lessons: arrays
 
+## Types of Arrays in Python
+
 As noted in the Reddit article from yesterday, before going into algorithms you need to be solid on data structures and attempt to implement your own.
 
 Initially I was going to attempt to do arrays, linked lists, and stacks/queues today, but there's enough to do in arrays themselves to fill at least a day's work.
-
-# Arrays
 
 ## Arrays
 

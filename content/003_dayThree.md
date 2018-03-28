@@ -73,7 +73,11 @@ Let's try doing exactly what the original StackOverflow article recommends again
 print(orig_bmp[0:13])
 ```
 
+And we get...
+
+```text
     b'BM6v/\x00\x00\x00\x00\x006\x00\x00'
+```
 
 Ech. My hexadecimal sucks so this is effectively gibberish to me. What if we try printing decimals? (_I went through a few iterations of this before realizing where the cutoff should be._)
 
@@ -145,6 +149,8 @@ This prints out:
     57:255
     58:255
     59:255
+...more of 255 for a long time...
+...then other numbers, then more 255s, etc....
 ```
 
 It looks like at byte 54 we start going into the image data. This also isn't telling me a whole lot more than that. Let's try the Struct module, [this](https://stackoverflow.com/questions/47003833/how-to-read-bmp-file-header-in-python) seems to give better information on using it:

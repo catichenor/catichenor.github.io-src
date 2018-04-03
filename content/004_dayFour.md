@@ -165,7 +165,7 @@ teststring
 
 ### Bytes
 
-Continuing from the above #### example:
+Continuing from the above example:
 
 ```python
 testbytes = teststring.encode()
